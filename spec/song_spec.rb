@@ -12,6 +12,7 @@ describe "Song" do
     Song.class_variable_set(:@@count, 0)
     Song.class_variable_set(:@@artist_count, {})
     Song.class_variable_set(:@@genre_count, {})
+    Song.class_variable_set(:@@all, [])
 
   end
   describe "#new" do 
@@ -41,6 +42,7 @@ describe "Song" do
   describe "class variables" do 
     it "has a class variable, @@count" do 
       expect(Song.class_variable_get(:@@count)).to eq(3)
+      # expect(Song.count).to eq(3)
     end
 
     it "has a class variable, @@artists, that contains all of the artists of existing songs" do 
